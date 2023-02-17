@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+body {
+    width: 100% !important; 
+    margin: 0 auto;
+    background-color:DarkGray !important; 
+    text-align: center !important; 
+} 
+
+
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>How many cars?</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<h1>How many cars?</h1>
+<p>A simple Django web app with a pretrained PyTorch Yolo model will try to find cars on image. 
+    <br>Uploaded images are not saved.</p>
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Upload</button>
+  </form>
+{% if image_ori is not None %}
+    <div class="alert" role="alert">
+        quantity: <b>{{ quantity }}</b>
+    </div>
+    {{ graph|safe }}
+{% endif %}
+
+</body>
+</html>
+
