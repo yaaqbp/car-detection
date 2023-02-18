@@ -27,6 +27,7 @@ SECRET_KEY = 'django-insecure-@ma#&nqr_i2ovpk8%)8(wo3_@_7hg)$mu0i0$f8pqeila8j8$h
 DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1','car-detection.herokuapp.com']
+CSRF_TRUSTED_ORIGINS = ['https://'+ALLOWED_HOSTS[1]]
 
 
 # Application definition
