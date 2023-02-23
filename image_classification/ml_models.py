@@ -14,8 +14,7 @@ class YOLO():
         result = self.yolo(image)
         df_result = result.pandas().xyxy[0]
         df_result = df_result[((df_result.name == 'car')|(df_result.name == 'bus')|(df_result.name == 'truck'))&(df_result.confidence > 0.22)]
-        
-        fig = plt.figure(figsize=(5,5))
+        fig = plt.figure()
         plt.imshow(image)
         plt.axis('off')
         for row in df_result.iterrows():
