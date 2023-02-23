@@ -28,6 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1','car-detection.herokuapp.com']
 CSRF_TRUSTED_ORIGINS = ['https://'+ALLOWED_HOSTS[1]]
+CSRF_COOKIE_SECURE = False
 
 
 # Application definition
